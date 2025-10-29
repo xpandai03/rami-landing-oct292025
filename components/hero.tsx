@@ -15,7 +15,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center py-32">
         <div className="space-y-8">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-balance">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-tight">
             Discover Your New
             <span className="block font-semibold mt-2">Home</span>
           </h1>
