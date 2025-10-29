@@ -8,7 +8,7 @@ export function Hero() {
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-20">
-          <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RAMI-listing2-zEvu4eJyHbMNgNQuxI70hjNFrY4qjA.mp4" type="video/mp4" />
+          <source src="/HERO-VIDEO.mp4" type="video/mp4" />
         </video>
       </div>
 
