@@ -5,6 +5,30 @@ import { ContactFormModal } from "@/components/contact-form-modal"
 
 const destinations = [
   {
+    name: "Featured Listing 1",
+    country: "San Antonio",
+    image: "/placeholder.svg",
+    video: "/RAMI-1ST-LISTINGROW.mp4",
+    description: "Premium home in San Antonio",
+    price: "Contact for Details",
+  },
+  {
+    name: "Featured Listing 2",
+    country: "San Antonio",
+    image: "/placeholder.svg",
+    video: "/RAMI-2ND-LIST-ROW.mp4",
+    description: "Beautiful property in San Antonio",
+    price: "Contact for Details",
+  },
+  {
+    name: "Featured Listing 3",
+    country: "San Antonio",
+    image: "/placeholder.svg",
+    video: "/RAMI-LIST-3rd-listing.mp4",
+    description: "Stunning home in San Antonio",
+    price: "Contact for Details",
+  },
+  {
     name: "Santorini",
     country: "Greece",
     image: "/santorini-sunset.png",
@@ -97,9 +121,8 @@ export function FeaturedDestinations() {
 
                 {/* Contact Badge */}
                 <ContactFormModal>
-                  <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full cursor-pointer hover:bg-white transition-colors z-10">
-                    <MapPin className="h-3.5 w-3.5 text-primary" />
-                    <span className="text-xs font-medium">Contact</span>
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center px-6 py-2 rounded-full cursor-pointer transition-colors z-10" style={{ backgroundColor: '#81D8D0' }}>
+                    <span className="text-sm font-semibold text-white">Contact</span>
                   </div>
                 </ContactFormModal>
               </div>
@@ -110,9 +133,16 @@ export function FeaturedDestinations() {
           ))}
         </div>
 
-        {/* View All Button */}
+        {/* View More Listings Button */}
         <div className="text-center mt-16">
-          
+          <ContactFormModal>
+            <Button
+              size="lg"
+              className="w-full max-w-md h-12 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base font-semibold"
+            >
+              View more listings
+            </Button>
+          </ContactFormModal>
         </div>
       </div>
     </section>
