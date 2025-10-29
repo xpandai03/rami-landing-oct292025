@@ -71,10 +71,7 @@ export function Navbar() {
         <div className="md:hidden bg-white border-t border-border">
           <div className="px-6 py-6 space-y-4">
             <a href="#destinations" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Destinations
-            </a>
-            <a href="#packages" className="block text-base font-medium text-foreground/70 hover:text-foreground">
-              Packages
+              Listings
             </a>
             <a href="#about" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               About
@@ -84,7 +81,7 @@ export function Navbar() {
             </a>
             <ContactFormModal>
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
-                Book Now
+                Consultation
               </Button>
             </ContactFormModal>
           </div>
