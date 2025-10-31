@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import { ContactFormModal } from "@/components/contact-form-modal"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -52,11 +51,18 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <ContactFormModal>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
+            <Button
+              asChild
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6"
+            >
+              <a
+                href="https://calendly.com/real_estate_rami/homeconsult?month=2025-10"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Consultation
-              </Button>
-            </ContactFormModal>
+              </a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,11 +85,18 @@ export function Navbar() {
             <a href="#contact" className="block text-base font-medium text-foreground/70 hover:text-foreground">
               Contact
             </a>
-            <ContactFormModal>
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full">
+            <Button
+              asChild
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
+            >
+              <a
+                href="https://calendly.com/real_estate_rami/homeconsult?month=2025-10"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Consultation
-              </Button>
-            </ContactFormModal>
+              </a>
+            </Button>
           </div>
         </div>
       )}
