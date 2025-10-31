@@ -50,11 +50,11 @@ export function Hero() {
             <div className="text-sm text-muted-foreground">Transactions</div>
           </div>
           <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">50K+</div>
+            <div className="text-4xl md:text-5xl font-light">500+</div>
             <div className="text-sm text-muted-foreground">Happy Homeowners </div>
           </div>
           <div className="space-y-2">
-            <div className="text-4xl md:text-5xl font-light">4.9</div>
+            <div className="text-4xl md:text-5xl font-light">4.9 ⭐</div>
             <div className="text-sm text-muted-foreground">Average Rating</div>
           </div>
         </div>

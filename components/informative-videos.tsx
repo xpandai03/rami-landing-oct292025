@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ContactFormModal } from "@/components/contact-form-modal"
 
 const videos = [
   {
@@ -53,6 +55,18 @@ export function InformativeVideos() {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* Learn More Button */}
+        <div className="text-center mt-16">
+          <ContactFormModal>
+            <Button
+              size="lg"
+              className="w-full max-w-md h-12 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base font-semibold"
+            >
+              Learn More
+            </Button>
+          </ContactFormModal>
         </div>
       </div>
     </section>

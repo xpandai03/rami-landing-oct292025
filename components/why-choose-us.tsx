@@ -1,4 +1,4 @@
-import { Globe, Shield, Headphones, Award } from "lucide-react"
+import { Globe, Shield, Headphones, Award, GraduationCap } from "lucide-react"
 
 const features = [
   {
@@ -21,6 +21,11 @@ const features = [
     title: "Industry Expert",
     description: "Retired veteran with proven expertise in finding the best new construction homes and negotiating great deals",
   },
+  {
+    icon: GraduationCap,
+    title: "VA Home Loan Expert",
+    description: "Specializes in VA loans, educating and guiding clients through the entire home buying process",
+  },
 ]
 
 export function WhyChooseUs() {
@@ -38,7 +43,7 @@ export function WhyChooseUs() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="text-center space-y-4">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-2">
