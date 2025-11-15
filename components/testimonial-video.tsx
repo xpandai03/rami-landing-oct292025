@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
+import { LazyVideo } from "@/components/lazy-video"
 
 const testimonialImages = [
   "1stNov-testimonnial1.jpg",
@@ -35,16 +37,13 @@ export function TestimonialVideo() {
           </div>
 
           <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
+            <LazyVideo
+              src="/TESTIMONIAL-rami.mp4"
+              poster="/posters/testimonial-poster.jpg"
+              alt="Client Testimonial Video"
+              containerClassName="w-full"
               className="w-full h-auto"
-            >
-              <source src="/TESTIMONIAL-rami.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            />
           </div>
 
           {/* Testimonial Photos Grid */}
@@ -55,10 +54,12 @@ export function TestimonialVideo() {
                 className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500"
               >
                 <div className="relative h-[400px] overflow-hidden">
-                  <img
+                  <Image
                     src={`/testimonoal-pics/${image}`}
                     alt={`Client testimonial ${index + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-black/0" />
                 </div>

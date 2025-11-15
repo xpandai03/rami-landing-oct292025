@@ -4,12 +4,21 @@ import { ContactFormModal } from "@/components/contact-form-modal"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-muted/30 to-background">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-20">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover opacity-20"
+        >
           <source src="/HERO-VIDEO.mp4" type="video/mp4" />
         </video>
+        {/* Smooth gradient overlay from video to background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
       </div>
 
       {/* Content */}
@@ -36,7 +45,7 @@ export function Hero() {
               </a>
             </Button>
             <ContactFormModal>
-              <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 bg-transparent">
+              <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 bg-transparent text-white hover:bg-white/10">
                 Contact
               </Button>
             </ContactFormModal>

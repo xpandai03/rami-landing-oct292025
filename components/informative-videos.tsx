@@ -1,25 +1,29 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ContactFormModal } from "@/components/contact-form-modal"
+import { LazyVideo } from "@/components/lazy-video"
 
 const videos = [
   {
     title: "Informative Video 1",
     video: "/informative-vid-1.mp4",
+    poster: "/posters/informative-1-poster.jpg",
   },
   {
     title: "Informative Video 2",
     video: "/informative-vid-2.mp4",
+    poster: "/posters/informative-2-poster.jpg",
   },
   {
     title: "Informative Video 3",
     video: "/informative-vid-3.mp4",
+    poster: "/posters/informative-3-poster.jpg",
   },
 ]
 
 export function InformativeVideos() {
   return (
-    <section className="py-32 bg-muted/30">
+    <section className="pt-16 pb-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
@@ -39,20 +43,15 @@ export function InformativeVideos() {
               className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500"
             >
               {/* Video */}
-              <div className="relative h-[600px] overflow-hidden">
-                <video
-                  src={item.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
-                  className="w-full h-full object-cover"
-                >
-                  Your browser does not support the video tag.
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 pointer-events-none" />
-              </div>
+              <LazyVideo
+                src={item.video}
+                poster={item.poster}
+                alt={item.title}
+                controls
+                containerClassName="h-[600px]"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 pointer-events-none" />
             </Card>
           ))}
         </div>

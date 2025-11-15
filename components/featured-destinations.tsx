@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, ArrowRight } from "lucide-react"
 import { ContactFormModal } from "@/components/contact-form-modal"
+import { LazyVideo } from "@/components/lazy-video"
+import Image from "next/image"
 
 const destinations = [
   {
@@ -9,6 +11,7 @@ const destinations = [
     country: "San Antonio",
     image: "/placeholder.svg",
     video: "/RAMI-1ST-LISTINGROW.mp4",
+    poster: "/posters/listing-1-poster.jpg",
     description: "Premium home in San Antonio",
     price: "Contact for Details",
   },
@@ -17,6 +20,7 @@ const destinations = [
     country: "San Antonio",
     image: "/placeholder.svg",
     video: "/RAMI-2ND-LIST-ROW.mp4",
+    poster: "/posters/listing-2-poster.jpg",
     description: "Beautiful property in San Antonio",
     price: "Contact for Details",
   },
@@ -25,6 +29,7 @@ const destinations = [
     country: "San Antonio",
     image: "/placeholder.svg",
     video: "/RAMI-LIST-3rd-listing.mp4",
+    poster: "/posters/listing-3-poster.jpg",
     description: "Stunning home in San Antonio",
     price: "Contact for Details",
   },
@@ -99,22 +104,23 @@ export function FeaturedDestinations() {
               key={index}
               className="group overflow-hidden border-0 bg-card hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
-              {/* Image */}
+              {/* Image/Video */}
               <div className="relative h-[600px] overflow-hidden">
                 {destination.video ? (
-                  <video
-                    src={destination.video || "/placeholder.svg"}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <LazyVideo
+                    src={destination.video}
+                    poster={destination.poster || destination.image}
+                    alt={destination.name}
+                    containerClassName="h-full"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 ) : (
-                  <img
+                  <Image
                     src={destination.image || "/placeholder.svg"}
                     alt={destination.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
